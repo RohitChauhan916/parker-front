@@ -16,12 +16,17 @@
 }
 .menu{
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: fit-content(200px) 2fr fit-content(200px);
   width: 100%;
   padding: 10px 0px;
 }
 .menu-list{
   width: 100%;
+}
+.menus{
+    width: 100%;
+max-width: 600px;
+padding: 0;
 }
 .menu-list ul{
   list-style: none;
@@ -59,3 +64,15 @@ section{
   height: 600px;
   background-color: #00377B;
 }
+.map{
+    background-image: url("./img/map.jpg");
+    width: 100%;
+    height: auto;
+  }
+  .menu_title{
+    font-family: Barlow;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300 !important;
+    color: #00377B;
+  }
