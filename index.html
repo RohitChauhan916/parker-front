@@ -46,11 +46,115 @@
         <section class="map">
             <div class="container">
                 <div class="maps">
-                    <div class="menu_title">
+
+                    <div class="map_title">
                         <h2>PARKER REALTY: REAL ESTATE DEVELOPER IN INDIA<br><span>ABOUT TATA REALTY</span></h2>
+                    </div>
+                    
+                    <div class="map_content">
+                        <h3>Providing quality life spaces through continuous innovation</h3>
+                        <p class="rea_para">Parker Realty is one of the fastest growing real estate companies in India today.</p>
+                        <p class="rea_para">Its primary business is development of residential, commercial and retail properties.</p>
+
+                    </div>
+
+                    <div class="car_display">
+                        <div class="carousel-frame carou_size">
+                            <div class="carousel-items">
+                            <div class="carousel-item box_size">
+                                <div class="carou_box">
+                                    <p class="over">OVER</p>
+                                    <p class="award"><span>10+</span><br>AWARDS WON</p>
+                                    <img src="./img/trophy.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item box_size">
+                                <div class="carou_box">
+                                    <p class="over">OVER</p>
+                                    <p class="award"><span>28+</span><br>YEARS OF BUILDING TRUST</p>
+                                    <img src="./img/trophy.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item box_size">
+                                <div class="carou_box">
+                                    <p class="over">PROJECTS</p>
+                                    <p class="award"><span>10+</span><br>DELIVERED</p>
+                                    <img src="./img/trophy.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item box_size">
+                                <div class="carou_box">
+                                    <p class="over">MORE THAN</p>
+                                    <p class="award"><span>30,000+</span><br>HAPPY<br>CUSTOMERS</p>
+                                    <img src="./img/trophy.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item box_size">
+                                <div class="carou_box">
+                                    <p class="over">OVER</p>
+                                    <p class="award"><span>3.5</span><br>MILLION SQ.M <br>UNDER DEVELOPMENT</p>
+                                    <img src="./img/trophy.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item box_size">
+                                <div class="carou_box">
+                                    <p class="over">EMPLOYEES</p>
+                                    <p class="award"><span>462</span><br>IN REAL ESTATE DIVISION</p>
+                                    <img src="./img/trophy.png">
+                                </div>
+                            </div>
+                            <div class="carousel-item box_size">
+                                <div class="carou_box">
+                                    <p class="over">OVER</p>
+                                    <p class="award"><span>10+</span><br>AWARDS WON</p>
+                                    <img src="./img/trophy.png">
+                                </div>
+                            </div>
+                            </div>
                         </div>
+                        <img id="prevBtn" src="./img/prev.png">
+                        <img id="nextBtn" src="./img/next.png">
+                    </div>
                 </div>
             </div>
         </section>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var carouselItems = document.querySelectorAll('.carousel-item');
+  var carouselItemsContainer = document.querySelector('.carousel-items');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var currentIndex = 0;
+  var frameWidth = carouselItemsContainer.offsetWidth;
+  var itemWidth = carouselItems[0].offsetWidth + parseInt(getComputedStyle(carouselItems[0]).marginRight);
+
+  function updateFramePosition() {
+    var translateX = -(currentIndex * itemWidth);
+    carouselItemsContainer.style.transform = 'translateX(' + translateX + 'px)';
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= carouselItems.length - 4) {
+      currentIndex = 0;
+    }
+    updateFramePosition();
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = carouselItems.length - 7;
+    }
+    updateFramePosition();
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  updateFramePosition();
+});
+
+        </script>
     </body>
 </html>

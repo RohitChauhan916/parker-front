@@ -1,8 +1,45 @@
+@font-face {
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  src: url(./Fonts/Barlow-Bold.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  src: url(./Fonts/barlow-light.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  src: url(./Fonts/Barlow-Medium.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./Fonts/Barlow-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  src: url(./Fonts/Barlow-SemiBold.ttf) format('ttf');
+}
+
 * {
     margin: auto;
     padding: auto;
 }
-
+body{
+  font-family: 'Barlow', sans-serif;
+}
 .sec_nav{
   background-color: #fff;
   width: 100%;
@@ -68,11 +105,118 @@ section{
     background-image: url("./img/map.jpg");
     width: 100%;
     height: auto;
-  }
-  .menu_title{
-    font-family: Barlow;
-    font-size: 25px;
-    text-align: center;
-    font-weight: 300 !important;
-    color: #00377B;
-  }
+}
+.map_title{
+  font-size: 25px;
+  text-align: center;
+  font-weight: 300;
+  color: #00377B;
+  padding: 50px 0px 30px 0px;
+  position: relative;
+}
+.map_title h2{
+  font-weight: 300;
+}
+.map_title h2:after{
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 14px;
+  background: url("./img/reality_line.png") no-repeat;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.map_content h3{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: #E5B250;
+  padding: 20px 0px;
+}
+.rea_para{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  color: #000;
+}
+.carousel-frame {
+  overflow: hidden;
+  width: 90%;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item {
+  flex: 0 0 calc(100% / 6);
+  margin-right: 10px;
+}
+
+.carousel-item.active {
+  opacity: 1; /* Set the opacity for visible slides */
+}
+#prevBtn,
+#nextBtn {
+  margin-top: 10px;
+}
+
+.box_size {
+  width: 100%;
+  height: 240px;
+  border: 1px solid #939598;
+  max-width: 170px;
+  padding: 15px;
+}
+.carou_size{
+  padding: 25px 0px;
+}
+.carou_box{
+  position: relative;
+  height: 100%;
+  color:#000;
+}
+.carou_box img{
+  bottom: 0;
+position: absolute;
+right: 0;
+}
+.award{
+  margin-top: 20px;
+}
+.over{
+  font-size: 15px;
+  font-weight: 400;
+}
+.carou_box p span{
+  font-weight: 700;
+  font-size: 40px;
+  color: #00377B;
+}
+.carou_box p{
+  color: #000;
+  font-weight: 400;
+  font-size: 17px;
+}
+.car_display{
+  width: 100%;
+  position: relative;
+}
+#prevBtn{
+  position: absolute;
+  top:45%;
+  left:0;
+  transform: translate(-0%, 0);
+}
+#nextBtn{
+  position: absolute;
+  top:45%;
+  right: 0;
+  transform: translate(-0%, 0);
+}
