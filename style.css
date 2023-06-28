@@ -220,3 +220,27 @@ right: 0;
   right: 0;
   transform: translate(-0%, 0);
 }
+.read_btn{
+  display: flex;
+}
+.read_btn .more_btn{
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: #E5B250;
+  width: 200px;
+  height: 60px;
+  display: flex;
+ flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.read_btn a{
+  text-decoration: none;
+  color: #000;
+}
+.maps{
+  padding: 60px 0px;
+}
