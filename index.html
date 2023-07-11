@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">    
         <title>PARKER</title>
-        <link href="./style.css" rel="stylesheet">
+        <link href="./css//style.css" rel="stylesheet">
+        <link href="./js/slick-1.8.1/slick/slick.css" rel="stylesheet">
+        <link href="./js/slick-1.8.1/slick/slick-theme.css" rel="stylesheet">
+        
     </head>
     <body>
         <div class="mess_chat">
@@ -22,7 +25,13 @@
                         <div class="menu-list">
                             <ul class="menus">
                                 <li>HOME</li>
-                                <li>PROJECTS</li>
+                                <li class="project_menu">PROJECTS
+                                    <ul class="project_sub">
+                                        <li>RESIDENTIAL</li>
+                                        <li>COMMERCIAL</li>
+                                        <li>PLOTTED</li>
+                                    </ul>
+                                </li>
                                 <li>OUR STORY</li>
                                 <li>CUSTOMER SUPPORT</li>
                                 <li>MEDIA</li>
@@ -47,7 +56,6 @@
                   </video> 
             </div>
         </section>
-
         <section class="map">
             <div class="container">
                 <div class="maps">
@@ -64,8 +72,8 @@
                     </div>
 
                     <div class="car_display">
-                        <div class="carousel-frame carou_size">
-                            <div class="carousel-items">
+                        <div class="carou_size">
+                            <div class="responsive slider">
                             <div class="carousel-item box_size">
                                 <div class="carou_box">
                                     <p class="over">OVER</p>
@@ -117,8 +125,6 @@
                             </div>
                             </div>
                         </div>
-                        <img id="prevBtn" src="./img/prev.png">
-                        <img id="nextBtn" src="./img/next.png">
                     </div>
                     <div class="read_btn">
                         <a href="#">
@@ -549,80 +555,43 @@
                 </div>
             </div>
         </footer>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./js/slick-1.8.1/slick/slick.min.js"></script>
         <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var carouselItems = document.querySelectorAll('.carousel-item');
-  var carouselItemsContainer = document.querySelector('.carousel-items');
-  var prevBtn = document.getElementById('prevBtn');
-  var nextBtn = document.getElementById('nextBtn');
-  var currentIndex = 0;
-  var frameWidth = carouselItemsContainer.offsetWidth;
-  var itemWidth = carouselItems[0].offsetWidth + parseInt(getComputedStyle(carouselItems[0]).marginRight);
-
-  function updateFramePosition() {
-    var translateX = -(currentIndex * itemWidth);
-    carouselItemsContainer.style.transform = 'translateX(' + translateX + 'px)';
-  }
-
-  function nextSlide() {
-    currentIndex++;
-    if (currentIndex >= carouselItems.length - 4) {
-      currentIndex = 0;
+            $('.responsive').slick({
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
     }
-    updateFramePosition();
-  }
-
-  function prevSlide() {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = carouselItems.length - 7;
-    }
-    updateFramePosition();
-  }
-
-  nextBtn.addEventListener('click', nextSlide);
-  prevBtn.addEventListener('click', prevSlide);
-
-  updateFramePosition();
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
 });
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  var carouselItems = document.querySelectorAll('.resi-item');
-  var carouselItemsContainer = document.querySelector('.resi-items');
-  var prevBtn = document.getElementById('prevBtn');
-  var nextBtn = document.getElementById('nextBtn');
-  var currentIndex = 0;
-  var frameWidth = carouselItemsContainer.offsetWidth;
-  var itemWidth = carouselItems[0].offsetWidth + parseInt(getComputedStyle(carouselItems[0]).marginRight);
-
-  function updateFramePosition() {
-    var translateX = -(currentIndex * itemWidth);
-    carouselItemsContainer.style.transform = 'translateX(' + translateX + 'px)';
-  }
-
-  function nextSlide() {
-    currentIndex++;
-    if (currentIndex >= carouselItems.length - 4) {
-      currentIndex = 0;
-    }
-    updateFramePosition();
-  }
-
-  function prevSlide() {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = carouselItems.length - 7;
-    }
-    updateFramePosition();
-  }
-
-  nextBtn.addEventListener('click', nextSlide);
-  prevBtn.addEventListener('click', prevSlide);
-
-  updateFramePosition();
-});
-
         </script>
     </body>
 </html>
